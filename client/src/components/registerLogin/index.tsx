@@ -68,6 +68,15 @@ const RegisterLogin = () => {
                     })
                 }
             })
+            .catch(err => {
+                setValues({
+                    ...values,
+                    errors: [
+                        ...values.errors,
+                        '로그인에 실패했어요! 이메일이나 비밀번호를 확인해 보세요!'
+                    ]
+                })
+            })
 
         } else {
             setValues({
