@@ -10,15 +10,17 @@ import Button from '@mui/material/Button';
 
 // 리덕스
 import { useThunkDispatch } from '../../thunk';
-import { loginUser } from '../../actions/user_action';
+import { loginUser } from '../../_actions/user_action';
 
 // 기타
 import axios from 'axios';
 
 
 const LoginTextField = styled(TextField)({
-  'display': 'block',
-  'width': '100%',
+    '&&': {
+        'display': 'block',
+        'width': '100%',
+    }
 })
 
 interface SignupValue {

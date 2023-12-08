@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './reducers';
+import rootReducer from './_reducers';
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import './index.css';

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // MUI
-import { styled } from '@mui/styles';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -10,22 +9,16 @@ import Button from '@mui/material/Button';
 
 // 리덕스
 import { useThunkDispatch } from '../../thunk';
-import { loginUser } from '../../actions/user_action';
-import { LoginData } from '../../actions/types';
-import { LoginState } from '../../reducers/user_reducer';
+import { loginUser } from '../../_actions/user_action';
+import { LoginData } from '../../_actions/types';
+import { LoginState } from '../../_reducers/user_reducer';
 
-
-const LoginTextField = styled(TextField)({
-    'display': 'block',
-    'width': '100%',
-})
 
 interface LoginValue extends LoginData {
     errors: string[];
 }
 
 const RegisterLogin = () => {
-
     const dispatch = useThunkDispatch<LoginState>();
     const navigate = useNavigate();
 
@@ -113,7 +106,7 @@ const RegisterLogin = () => {
                     autoComplete="off"
                 >
                     <div className='input-field'>
-                        <LoginTextField 
+                        <TextField 
                             id="email"
                             label="Email"
                             name='email'
@@ -131,7 +124,7 @@ const RegisterLogin = () => {
 
                     <br />
                     <div className='input-field'>
-                        <LoginTextField 
+                        <TextField 
                             id="password"
                             label="Password"
                             name='password'
@@ -169,15 +162,6 @@ const RegisterLogin = () => {
                         >
                             Login
                         </Button>
-                        <Link to="/register">
-                            <Button
-                                type='button'
-                                name='action'
-                                variant="contained"
-                            >
-                                Sign up
-                            </Button>
-                        </Link>
                     </div>
                 </Box>
             </div>
